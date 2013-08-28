@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("Prometheus")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyDescription("Creator of HUMANS, duh!")]
+[assembly: AssemblyConfiguration("0.1")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("codex")]
+[assembly: AssemblyCopyright("Ethan Jurman & Jordan Gundlach")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
