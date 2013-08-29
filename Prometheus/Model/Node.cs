@@ -5,16 +5,24 @@ namespace Prometheus.Model
 	public class Node
 	{
 		string name;
+		bool selected;
 
+		public Node(string name, bool selected = false)
+		{
+			Name = name;
+			Selected = selected;
+		}
+		
 		public string Name
 		{
 			get { return name; }
 			set { name = value; }
 		}
 
-		public Node(string name)
+		public bool Selected
 		{
-			Name = name;
+			get { return selected; }
+			set { selected = value; }
 		}
 	}
 }
