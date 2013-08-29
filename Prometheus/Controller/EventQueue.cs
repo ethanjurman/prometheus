@@ -6,7 +6,7 @@ using Prometheus.Model;
 
 namespace Prometheus.Controller
 {
-    class Controller : System.Collections.CollectionBase
+    class EventQueue : System.Collections.CollectionBase
     {
         public void Add(Event element)
         {
