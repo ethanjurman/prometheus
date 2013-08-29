@@ -67,7 +67,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Class1.cs" />
+    <Compile Include="Controller\EventQueue.cs" />
+    <Compile Include="Controller\Event.cs" />
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainWindow.cs" />
     <Compile Include="gtk-gui\MainWindow.cs" />
