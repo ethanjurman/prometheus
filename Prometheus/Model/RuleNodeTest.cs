@@ -1,7 +1,7 @@
 using System;
 using NUnit.Framework;
 
-namespace Prometheus
+namespace Prometheus.Model
 {
 	[TestFixture]
 	public class RuleNodeTest

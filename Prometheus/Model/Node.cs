@@ -1,6 +1,6 @@
 using System;
 
-namespace Prometheus
+namespace Prometheus.Model
 {
 	public class Node
 	{
