@@ -17,7 +17,7 @@ namespace Prometheus.Controller
         {
             var element = List[Count - 1];
             List.RemoveAt(Count - 1);
-            // event.execute
+            //element.execute();
             return (Event)element;
         }
     }

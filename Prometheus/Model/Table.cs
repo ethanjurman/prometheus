@@ -5,6 +5,7 @@ namespace Prometheus.Model
 	public class Table : Node
 	{
 		SortedSet<Node> nodes;
+        SortedSet<RuleNode> ruleNodes;
 
 		public Table(string name) : base(name)
 		{
