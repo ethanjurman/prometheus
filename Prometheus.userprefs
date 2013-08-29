@@ -1,17 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Prometheus/AssemblyInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Prometheus/Model/RuleNode.cs">
     <Files>
-      <File FileName="Prometheus/Main.cs" Line="8" Column="26" />
-      <File FileName="Prometheus/AssemblyInfo.cs" Line="9" Column="38" />
+      <File FileName="Prometheus/AssemblyInfo.cs" Line="7" Column="40" />
+      <File FileName="Prometheus/Model/Node.cs" Line="13" Column="24" />
+      <File FileName="Prometheus/Main.cs" Line="14" Column="4" />
+      <File FileName="Prometheus/Model/RuleNodeTest.cs" Line="12" Column="56" />
+      <File FileName="Prometheus/Model/RuleNode.cs" Line="21" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Prometheus" expanded="True">
             <Node name="References" expanded="True" />
-            <Node name="Controller" expanded="True" selected="True" />
-            <Node name="Model" expanded="True" />
+            <Node name="Controller" expanded="True" />
+            <Node name="Model" expanded="True">
+              <Node name="RuleNode.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
