@@ -2,14 +2,16 @@ using System;
 
 namespace Prometheus.Model
 {
-	public class Node
+	public abstract class Node
 	{
 		string name;
-		bool selected;
+        bool selected;
+        Node parent;
 
-		public Node(string name, bool selected = false)
+        protected Node(string name, ref Node parent, bool selected = false)
 		{
 			Name = name;
+            Parent = parent;
 			Selected = selected;
 		}
 		
@@ -18,6 +20,12 @@ namespace Prometheus.Model
 			get { return name; }
 			set { name = value; }
 		}
+
+        public Node Parent
+        {
+            get { return parent; }
+            set { parent = value; }
+        }
 
 		public bool Selected
 		{
