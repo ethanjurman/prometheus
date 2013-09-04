@@ -21,7 +21,7 @@ namespace Prometheus.Model
 
         public bool isNumber()
         {
-            Regex regex = new Regex(@"^[0-9]*.?[0-9]*$");
+            Regex regex = new Regex(@"^[0-9]*[.]?[0-9]*$");
             return regex.IsMatch(Eval);
         }
     }
