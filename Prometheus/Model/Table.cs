@@ -10,6 +10,8 @@ namespace Prometheus.Model
 
 		public Table(string name, Node parent) : base(name, parent)
 		{
+            nodes = new SortedSet<Node>();
+            ruleNodes = new SortedSet<RuleNode>();
 		}
 
         public string QueryTag
@@ -17,6 +19,8 @@ namespace Prometheus.Model
             get { return queryTag; }
             set { queryTag = value; }
         }
+
+
 	}
 }
 
