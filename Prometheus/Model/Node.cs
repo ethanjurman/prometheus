@@ -8,7 +8,7 @@ namespace Prometheus.Model
         bool selected;
         Node parent;
 
-        protected Node(string name, ref Node parent, bool selected = false)
+        protected Node(string name, Node parent, bool selected = false)
 		{
 			Name = name;
             Parent = parent;

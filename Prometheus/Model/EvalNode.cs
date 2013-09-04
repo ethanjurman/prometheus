@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -10,7 +9,7 @@ namespace Prometheus.Model
     {
         string eval;
 
-        public EvalNode(string name, ref Node parent) : base(name, ref parent)
+        public EvalNode(string name, Node parent) : base(name, parent)
 		{
 		}
 

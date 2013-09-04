@@ -7,7 +7,7 @@ namespace Prometheus.Model
 		string rule;
 		int priority;
 
-		public RuleNode(string name, ref Node parent) : base(name, ref parent)
+		public RuleNode(string name, Node parent) : base(name, parent)
 		{
 			Priority = 0;
 			Rule = "";

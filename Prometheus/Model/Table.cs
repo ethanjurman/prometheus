@@ -8,7 +8,7 @@ namespace Prometheus.Model
         SortedSet<RuleNode> ruleNodes;
         string queryTag;
 
-		public Table(string name, ref Node parent) : base(name, ref parent)
+		public Table(string name, Node parent) : base(name, parent)
 		{
 		}
 
