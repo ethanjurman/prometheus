@@ -11,6 +11,12 @@ namespace Prometheus.Model
 		public Table(string name, ref Node parent) : base(name, ref parent)
 		{
 		}
+
+        public string QueryTag
+        {
+            get { return queryTag; }
+            set { queryTag = value; }
+        }
 	}
 }
 

@@ -18,13 +18,21 @@ namespace Prometheus.Model
 		public string Name
 		{
 			get { return name; }
-			set { name = value; }
+			set {
+                if (value.Length > 255)
+                    throw new FormatException("length of name is greater than 255 characters.");
+                name = value;
+            }
 		}
 
         public Node Parent
         {
             get { return parent; }
-            set { parent = value; }
+            set {
+                if (parent == this)
+                    throw new ArgumentException("Node " + this.Name + " cannot be a parent of itself.");
+                parent = value; 
+            }
         }
 
 		public bool Selected
