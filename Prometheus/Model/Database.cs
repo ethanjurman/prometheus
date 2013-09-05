@@ -22,28 +22,25 @@ namespace Prometheus.Model
         {
             var list = new List<Node>();
             if (Nodes.TryGetValue(node.Parent.Name, out list))
-            {
                 list.Add(node);
-            }
             else
-            {
                 list.Add(node);
-            }
             Nodes.Add(node.Parent.Name, list);
         }
 
         public bool Remove(Node node)
         {
-            
+            var list = new List<Node>();
+            if (Nodes.TryGetValue(node.Parent.Name, out list))
+                if (list.Contains(node))
+                    return list.Remove(node);
+            return false;
         }
 
         public List<Node> ParentQuery(string query)
         {
-            var nodes = new List<Node>();
-
-            
-
-            return nodes;
+            var list = new List<Node>();
+            return Nodes.TryGetValue(query, out list) ? list : list;
         }
     }
 }
