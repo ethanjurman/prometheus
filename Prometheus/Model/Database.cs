@@ -7,20 +7,20 @@ namespace Prometheus.Model
 {
     class Database
     {
-        Dictionary<string, List<Node>> nodes;
+        Dictionary<string, SortedSet<Node>> nodes;
         public Database()
         {
-            nodes = new Dictionary<string, List<Node>>();
+            nodes = new Dictionary<string, SortedSet<Node>>();
         }
 
-        public Dictionary<string, List<Node>> Nodes
+        public Dictionary<string, SortedSet<Node>> Nodes
         {
             get { return nodes; }
         }
 
         public void Insert(Node node)
         {
-            var list = new List<Node>();
+            var list = new SortedSet<Node>();
             if (Nodes.TryGetValue(node.Parent.Name, out list))
                 list.Add(node);
             else
@@ -30,16 +30,26 @@ namespace Prometheus.Model
 
         public bool Remove(Node node)
         {
-            var list = new List<Node>();
+            var list = new SortedSet<Node>();
             if (Nodes.TryGetValue(node.Parent.Name, out list))
                 if (list.Contains(node))
                     return list.Remove(node);
             return false;
         }
 
-        public List<Node> ParentQuery(string query)
+
+        /// <summary>
+        /// Returns a list of nodes that have the same parent
+        /// (will mostly be used in the model for generating tables)
+        /// </summary>
+        /// <param name="query"> parent string </param>
+        /// <returns>
+        /// Returns a list of nodes that have the same parent,
+        /// If no nodes are avalible, will return a empty SortedSet
+        /// </returns>
+        public SortedSet<Node> ParentQuery(string query)
         {
-            var list = new List<Node>();
+            var list = new SortedSet<Node>();
             return Nodes.TryGetValue(query, out list) ? list : list;
         }
     }

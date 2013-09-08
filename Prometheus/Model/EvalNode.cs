@@ -9,7 +9,7 @@ namespace Prometheus.Model
     {
         string eval;
 
-        public EvalNode(string name, Node parent) : base(name, parent)
+        public EvalNode(string name, Node parent, Database db) : base(name, parent, db)
 		{
 		}
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Prometheus.Model
 {
@@ -7,12 +8,15 @@ namespace Prometheus.Model
 		string name;
         bool selected;
         Node parent;
+        Database db;
 
-        protected Node(string name, Node parent, bool selected = false)
+        protected Node(string name, Node parent, Database db, bool selected = false)
 		{
 			Name = name;
             Parent = parent;
+            Db = db;
 			Selected = selected;
+            db.Insert(this);
 		}
 		
 		public string Name
@@ -33,6 +37,12 @@ namespace Prometheus.Model
                     throw new ArgumentException("Node " + this.Name + " cannot be a parent of itself.");
                 parent = value; 
             }
+        }
+
+        public Database Db
+        {
+            get { return db; }
+            set { db = value; }
         }
 
 		public bool Selected
