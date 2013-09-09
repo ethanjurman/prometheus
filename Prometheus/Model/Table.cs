@@ -11,9 +11,9 @@ namespace Prometheus.Model
 
 		public Table(string name, Node parent, Database db) : base(name, parent, db)
 		{
-            evalNodes = new SortedSet<EvalNode>();
-            tables = new SortedSet<Table>();
-            ruleNodes = new SortedSet<RuleNode>();
+            EvalNodes = new SortedSet<EvalNode>();
+            Tables = new SortedSet<Table>();
+            RuleNodes = new SortedSet<RuleNode>();
 		}
 
         public string QueryTag
@@ -31,19 +31,19 @@ namespace Prometheus.Model
         /// </param>
         public void queryNodes(bool flat)
         {
-            foreach (Node node in Db.ParentQuery(queryTag))
+            foreach (Node node in Db.ParentQuery(QueryTag))
             {
                 if (node is Table)
                 {
                     if (flat)
                         queryNodesFlat((Table)node);
                     else
-                        tables.Add((Table)node);
+                        Tables.Add((Table)node);
                 }
                 else if (node is RuleNode)
-                    ruleNodes.Add((RuleNode)node);
+                    RuleNodes.Add((RuleNode)node);
                 else if (node is EvalNode)
-                    evalNodes.Add((EvalNode)node);
+                    EvalNodes.Add((EvalNode)node);
             }
         }
 
@@ -60,9 +60,9 @@ namespace Prometheus.Model
                 tables.Add(t);
             }
             foreach (RuleNode node in table.ruleNodes)
-                ruleNodes.Add(node);
+                RuleNodes.Add(node);
             foreach (EvalNode node in table.evalNodes)
-                evalNodes.Add(node);
+                EvalNodes.Add(node);
         }
 	}
 }
