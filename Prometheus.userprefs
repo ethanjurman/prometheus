@@ -1,15 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Prometheus/Model/EvalNodeTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Prometheus/Model/Table.cs">
     <Files>
       <File FileName="Prometheus/AssemblyInfo.cs" Line="7" Column="40" />
       <File FileName="Prometheus/Model/Node.cs" Line="17" Column="3" />
       <File FileName="Prometheus/Main.cs" Line="14" Column="4" />
       <File FileName="Prometheus/Model/RuleNodeTest.cs" Line="9" Column="3" />
       <File FileName="Prometheus/Model/RuleNode.cs" Line="16" Column="3" />
-      <File FileName="Prometheus/Model/Table.cs" Line="8" Column="39" />
-      <File FileName="Prometheus/Model/EvalNode.cs" Line="19" Column="34" />
-      <File FileName="Prometheus/Model/EvalNodeTest.cs" Line="15" Column="22" />
+      <File FileName="Prometheus/Model/Table.cs" Line="8" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +15,7 @@
           <Node name="Prometheus" expanded="True">
             <Node name="Controller" expanded="True" />
             <Node name="Model" expanded="True">
-              <Node name="EvalNodeTest.cs" selected="True" />
+              <Node name="Table.cs" selected="True" />
             </Node>
           </Node>
         </State>
