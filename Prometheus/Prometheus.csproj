@@ -80,6 +80,7 @@
     <Compile Include="Model\Table.cs" />
     <Compile Include="Model\RuleNode.cs" />
     <Compile Include="Model\RuleNodeTest.cs" />
+    <Compile Include="Model\EvalNodeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />
