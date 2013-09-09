@@ -22,6 +22,24 @@ namespace Prometheus.Model
             set { queryTag = value; }
         }
 
+		public SortedSet<EvalNode> EvalNodes
+		{
+			get { return evalNodes; }
+			set { evalNodes = value; }
+		}
+
+		public SortedSet<Table> Tables
+		{
+			get { return tables; }
+			set { tables = value; }
+		}
+
+		public SortedSet<RuleNode> RuleNodes
+		{
+			get { return ruleNodes; }
+			set { ruleNodes = value; }
+		}
+
         /// <summary>
         /// method to query nodes into this table
         /// </summary>

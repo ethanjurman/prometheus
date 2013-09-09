@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Prometheus.Model
 {
-    class EvalNode : Node
+    public class EvalNode : Node
     {
         string eval;
 
