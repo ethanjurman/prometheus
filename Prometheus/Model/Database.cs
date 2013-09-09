@@ -21,10 +21,8 @@ namespace Prometheus.Model
         public void Insert(Node node)
         {
             var list = new SortedSet<Node>();
-            if (Nodes.TryGetValue(node.Parent.Name, out list))
-                list.Add(node);
-            else
-                list.Add(node);
+			Nodes.TryGetValue(node.Parent.Name, out list);
+			list.Add(node);
             Nodes.Add(node.Parent.Name, list);
         }
 
@@ -50,7 +48,8 @@ namespace Prometheus.Model
         public SortedSet<Node> ParentQuery(string query)
         {
             var list = new SortedSet<Node>();
-            return Nodes.TryGetValue(query, out list) ? list : list;
+            Nodes.TryGetValue(query, out list);
+			return list;
         }
     }
 }

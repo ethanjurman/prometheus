@@ -29,7 +29,7 @@ namespace Prometheus.Model
         /// if elements should be depth one, then
         /// flat should be true
         /// </param>
-        public void queryNodes(bool flat)
+        public void queryNodes(bool flat = false)
         {
             foreach (Node node in Db.ParentQuery(queryTag))
             {
