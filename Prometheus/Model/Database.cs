@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prometheus.Model
 {
-    class Database
+    public class Database
     {
         Dictionary<string, SortedSet<Node>> nodes;
         public Database()
