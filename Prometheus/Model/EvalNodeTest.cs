@@ -7,7 +7,7 @@ namespace Prometheus.Model
 	public class EvalNodeTest
 	{
 		[Test]
-		public void numberCheckTest()
+		public void numberTest()
 		{
 			EvalNode node = new EvalNode("Test", null){Eval = "122.1"};
 			Assert.IsTrue(node.isNumber());
