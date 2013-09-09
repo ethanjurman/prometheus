@@ -23,35 +23,26 @@ namespace Prometheus.Model
         }
 
         /// <summary>
-        /// provides a way to fill tables with nodes from the database
+        /// method to query nodes into this table
         /// </summary>
-        public void queryNodes()
+        /// <param name="flat">
+        /// if elements should be depth one, then
+        /// flat should be true
+        /// </param>
+        public void queryNodes(bool flat)
         {
             foreach (Node node in Db.ParentQuery(queryTag))
             {
                 if (node is Table)
-                    tables.Add((Table)node);
-                if (node is RuleNode)
+                {
+                    if (flat)
+                        queryNodesFlat((Table)node);
+                    else
+                        tables.Add((Table)node);
+                }
+                else if (node is RuleNode)
                     ruleNodes.Add((RuleNode)node);
-                if (node is EvalNode)
-                    evalNodes.Add((EvalNode)node);
-            }
-        }
-
-        /// <summary>
-        /// alternative way to fill tables with nodes from the database
-        /// (this method will allow sub-table nodes to be accessed at the
-        /// first level... this will of course clutter the first level)
-        /// </summary>
-        public void queryNodesFlat()
-        {
-            foreach (Node node in Db.ParentQuery(queryTag))
-            {
-                if (node is Table)
-                    tables.Add((Table)node);
-                if (node is RuleNode)
-                    ruleNodes.Add((RuleNode)node);
-                if (node is EvalNode)
+                else if (node is EvalNode)
                     evalNodes.Add((EvalNode)node);
             }
         }
