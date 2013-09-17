@@ -8,9 +8,9 @@ namespace Prometheus.Model
 		string name;
         bool selected;
         Node parent;
-        Database db;
+        NodeDatabase db;
 
-        protected Node(string name, Node parent, Database db, bool selected = false)
+        protected Node(string name, Node parent, NodeDatabase db, bool selected = false)
 		{
 			Name = name;
             Parent = parent;
@@ -39,7 +39,7 @@ namespace Prometheus.Model
             }
         }
 
-        public Database Db
+        public NodeDatabase Db
         {
             get { return db; }
             set { db = value; }

@@ -9,7 +9,7 @@ namespace Prometheus.Model
         SortedSet<RuleNode> ruleNodes;
         string queryTag;
 
-		public Table(string name, Node parent, Database db) : base(name, parent, db)
+		public Table(string name, Node parent, NodeDatabase db) : base(name, parent, db)
 		{
             EvalNodes = new SortedSet<EvalNode>();
             Tables = new SortedSet<Table>();
