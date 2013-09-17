@@ -74,13 +74,13 @@
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Model\Database.cs" />
     <Compile Include="Model\EvalNode.cs" />
     <Compile Include="Model\Node.cs" />
     <Compile Include="Model\Table.cs" />
     <Compile Include="Model\RuleNode.cs" />
     <Compile Include="Model\RuleNodeTest.cs" />
     <Compile Include="Model\EvalNodeTest.cs" />
+    <Compile Include="Model\NodeDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />

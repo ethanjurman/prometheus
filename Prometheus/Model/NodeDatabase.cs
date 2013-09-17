@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Prometheus.Model
 {
-    public class Database
+    public class NodeDatabase
     {
         Dictionary<string, SortedSet<Node>> nodes;
-        public Database()
+        public NodeDatabase()
         {
             nodes = new Dictionary<string, SortedSet<Node>>();
         }
