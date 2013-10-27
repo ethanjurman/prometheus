@@ -24,7 +24,7 @@ namespace Prometheus.Model
 			get { return name; }
 			set {
                 if (value.Length > 255)
-                    throw new FormatException("length of name is greater than 255 characters.");
+                    throw new FormatException("Length of name is greater than 255 characters.");
                 name = value;
             }
 		}
@@ -32,7 +32,9 @@ namespace Prometheus.Model
         public Node Parent
         {
             get { return parent; }
-            set {
+
+            set
+			{
                 if (parent == this)
                     throw new ArgumentException("Node " + this.Name + " cannot be a parent of itself.");
                 parent = value; 
