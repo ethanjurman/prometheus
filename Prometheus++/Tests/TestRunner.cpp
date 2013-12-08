@@ -7,7 +7,7 @@ void TestRunner::addTest(void (*func)()) {
 }
 
 void TestRunner::runTests() {
-  for(int i = 0; i < tests.size(); ++i) {
+  for(unsigned int i = 0; i < tests.size(); ++i) {
 	try {
 	  tests[i]();
 	} catch(AssertException& e) {
