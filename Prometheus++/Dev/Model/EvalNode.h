@@ -7,6 +7,7 @@ namespace Model {
 	
   public:
 	EvalNode(std::string name, Node* parent) : Node(name, parent) {}
+	EvalNode& operator=(const EvalNode&);
 	bool isNumber();
 	void setEvaluation(std::string);
   };

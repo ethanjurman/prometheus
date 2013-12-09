@@ -14,3 +14,9 @@ bool EvalNode::isNumber() {
 void EvalNode::setEvaluation(string e) {
   eval = e;
 }
+
+EvalNode& EvalNode::operator=(const EvalNode& e) {
+  eval = e.eval;
+  name = e.name;
+  return *this;
+}

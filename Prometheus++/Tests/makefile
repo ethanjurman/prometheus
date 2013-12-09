@@ -15,7 +15,7 @@ clean: testMain.o TestRunner.o test
 	rm test *.o
 	
 cleanEvalNode: evalNodeTest
-	rm evalNodeTest *.o
+	rm evalNodeTest 
 	
 evalTest: EvalNodeTest.cpp TestRunner.cpp TestRunner.h
 	$(COMP) $(FLAGS) $(C11FLAG) -o evalNodeTest EvalNodeTest.cpp TestRunner.cpp "../Dev/Model/EvalNode.cpp"
