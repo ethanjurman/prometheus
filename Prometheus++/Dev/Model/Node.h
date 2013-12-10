@@ -12,6 +12,6 @@ namespace Model {
 	  this->selected = selected;
 	}
 	
-	~Node { delete parent; }
+	~Node() { delete parent; }
   };
 }

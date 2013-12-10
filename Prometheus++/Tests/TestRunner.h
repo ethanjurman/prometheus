@@ -14,17 +14,30 @@ public:
   }
 };
 
+class TestStore {
+  std::string testName;
+  void (*func)();
+  
+public:
+  TestStore(std::string, void (*)());
+  TestStore(void (*)());
+  void runFunction();
+};
+
 class TestRunner {
 private:
-  std::vector<void (*)()> tests;
+  std::vector<TestStore*> tests;
   int total, pass;
   
-  //don't allow copies or assignment
-  
+  // don't allow copies or assignment
+  TestRunner(const TestRunner&) {}
+  TestRunner& operator=(const TestRunner&) { return *this; }
   
 public:
   TestRunner(): total(0), pass(0) {}
+  ~TestRunner();
   void addTest(void (*)());
+  void addTest(void (*)(), std::string);
   void runTests();
   static void assertTrue(std::string, bool);
   static void assertTrue(bool);
