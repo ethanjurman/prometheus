@@ -28,6 +28,6 @@ public:
 int main() {
   TestRunner run;
   
-  run.addTest(EvalNodeTest::isNumberTest);
+  run.addTest(EvalNodeTest::isNumberTest, "isNumberTest");
   run.runTests();
 }

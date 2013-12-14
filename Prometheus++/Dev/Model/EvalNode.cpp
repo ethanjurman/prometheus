@@ -1,5 +1,4 @@
 #include "EvalNode.h"
-#include <regex>
 using namespace Model;
 using namespace std;
 
@@ -8,6 +7,7 @@ bool EvalNode::isNumber() {
   
   if(test == 0)
 	return (eval[0] == '0' || eval[0] == '.');
+  
   return test;
 }
 

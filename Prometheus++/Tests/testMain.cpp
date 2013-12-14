@@ -3,7 +3,10 @@
 using namespace std;
 
 void test1() {
-  cout << "Hello World" << endl;
+  string s1 = "Hello";
+  string s2 = " World";
+  cout << s1 + s2 << endl;
+  TestRunner::assertNotEquals<string>(s1, s2);
 }
 
 void test2() {

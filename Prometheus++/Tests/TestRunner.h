@@ -1,6 +1,6 @@
 #include <vector>
 #include <exception>
-#include<string>
+#include <string>
 
 class AssertException: public std::exception {
   std::string message;
@@ -20,8 +20,10 @@ class TestStore {
   
 public:
   TestStore(std::string, void (*)());
+  TestStore(const char*, void (*)());
   TestStore(void (*)());
   void runFunction();
+  std::string getTestName();
 };
 
 class TestRunner {
@@ -30,8 +32,8 @@ private:
   int total, pass;
   
   // don't allow copies or assignment
-  TestRunner(const TestRunner&) {}
-  TestRunner& operator=(const TestRunner&) { return *this; }
+  TestRunner(const TestRunner&);
+  TestRunner& operator=(const TestRunner&);
   
 public:
   TestRunner(): total(0), pass(0) {}
@@ -45,14 +47,26 @@ public:
   static void assertFalse(bool);
   
   template<typename T>
-  static void assertEquals(std::string message, T& first, T& second) {
+  static void assertEquals(const std::string msg, const T& first, const T& second) {
 	if(first != second)
-	  throw AssertException(message);
+	  throw AssertException(msg);
   }
   
   template<typename T>
-  static void assertEquals(T& first, T& second) {
+  static void assertEquals(const T& first, const T& second) {
 	if(first != second)
+	  throw AssertException();
+  }
+  
+  template<typename T>
+  static void assertNotEquals(const std::string msg, const T& first, const T& second) {
+	if(first == second)
+	  throw AssertException(msg);
+  }
+  
+  template<typename T>
+  static void assertNotEquals(const T& first, const T& second) {
+	if(first == second)
 	  throw AssertException();
   }
 };

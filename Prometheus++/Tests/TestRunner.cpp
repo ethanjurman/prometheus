@@ -17,7 +17,7 @@ void TestRunner::runTests() {
 	try {
 	  tests[i]->runFunction();
 	} catch(AssertException& e) {
-	  cerr <<  e.getMessage() << endl;
+	  cerr << "Error in " << tests[i]->getTestName() << ": " << e.getMessage() << endl;
 	}
   }
 }
@@ -51,6 +51,11 @@ TestStore::TestStore(string funcName, void (*f)()) {
   func = f;
 }
 
+TestStore::TestStore(const char* funcName, void (*f)()) {
+  testName = funcName;
+  func = f;
+}
+
 TestStore::TestStore(void (*f)()) {
   testName = "";
   func = f;
@@ -64,4 +69,8 @@ TestRunner::~TestRunner() {
 
 void TestStore::runFunction() {
   func();
+}
+
+string TestStore::getTestName() {
+  return testName;
 }
