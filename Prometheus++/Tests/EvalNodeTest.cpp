@@ -1,7 +1,6 @@
 #include "TestRunner.h"
 #include "../Dev/Model/EvalNode.h"
 #include <string>
-#include <assert.h>
 #include <iostream>
 using namespace std;
 using namespace Model;
