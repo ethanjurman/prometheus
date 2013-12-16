@@ -14,9 +14,9 @@ bool EvalNode::isNumber() {
     // Make sure there's only one decimal
     if(*it == POINT) {
       if(isDec) {
-	return false;
+		return false;
       } else {
-	isDec = true;
+		isDec = true;
       }
     }
   }

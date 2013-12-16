@@ -12,6 +12,10 @@ namespace Model {
 	  this->selected = selected;
 	}
 	
+  public:
 	~Node() { delete parent; }
+	Node& getParent() const;
+	std::string getName() const;
+	void setName(std::string);
   };
 }
