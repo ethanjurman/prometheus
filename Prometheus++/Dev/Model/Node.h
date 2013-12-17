@@ -6,14 +6,18 @@ namespace Model {
 	bool selected;
 	Node* parent;
 	
+  public:
 	Node(std::string name, Node* parent, bool selected = false) {
 	  this->name = name;
 	  this->parent = parent;
 	  this->selected = selected;
 	}
 	
-  public:
-	~Node() { delete parent; }
+	Node(std::string name, bool selected = false) {
+	  Node(name, NULL, selected);
+	}
+	
+	~Node();
 	Node& getParent() const;
 	std::string getName() const;
 	void setName(std::string);

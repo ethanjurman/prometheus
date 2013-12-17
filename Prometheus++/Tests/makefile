@@ -19,3 +19,8 @@ cleanEvalNode: evalNodeTest
 	
 evalTest: EvalNodeTest.cpp TestRunner.cpp TestRunner.h
 	$(COMP) $(FLAGS) $(C11FLAG) -o evalNodeTest EvalNodeTest.cpp TestRunner.cpp "../Dev/Model/EvalNode.cpp"
+
+nodeDbTest: TestRunner.cpp NodeDatabaseTest.cpp
+	$(COMP) $(C11FLAG) -o nodeDbTest NodeDatabaseTest.cpp TestRunner.cpp "../Dev/Model/NodeDatabase.cpp" "../Dev/Model/Node.cpp"
+cleanNodeDbTest: nodeDbTest
+	rm nodeDbTest

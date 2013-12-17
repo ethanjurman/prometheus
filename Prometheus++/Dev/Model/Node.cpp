@@ -2,6 +2,11 @@
 using namespace std;
 using namespace Model;
 
+Node::~Node() {
+  if(parent != 0)
+	delete parent;
+}
+
 Node& Node::getParent() const {
   return *parent;
 }

@@ -1,7 +1,6 @@
 #include "TestRunner.h"
 #include "../Dev/Model/EvalNode.h"
 #include <string>
-#include <iostream>
 using namespace std;
 using namespace Model;
 
@@ -26,7 +25,8 @@ public:
 
 int main() {
   TestRunner run;
-  
   run.addTest(EvalNodeTest::isNumberTest, "isNumberTest");
   run.runTests();
+  
+  return 0;
 }
