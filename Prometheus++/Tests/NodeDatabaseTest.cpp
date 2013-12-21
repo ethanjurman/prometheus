@@ -12,7 +12,7 @@ public:
 	NodeDatabase db;
 	db.insertNode(n);
 	
-	TestRunner::assertEquals<int>("Verify there's 1 child.", 1, db.parentQuery(n.getName())->size());
+	TestRunner::assertEquals<int>(1, db.parentQuery(n.getName())->size());
 	
 	db.removeNode(n);
 	vector<Node*>* v = db.parentQuery(n.getName());
