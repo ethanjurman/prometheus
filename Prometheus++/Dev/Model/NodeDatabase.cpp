@@ -11,6 +11,7 @@ void NodeDatabase::insertNode(Node& n) {
   
   if(it == nodes.end()) {
 	vector<Node*>* children = new vector<Node*>;
+	children->push_back(&n);
 	nodes[n.getName()] = children; // creates the key-value pair
   } else {
 	it->second->push_back(&n);
@@ -21,7 +22,7 @@ bool NodeDatabase::removeNode(Node& n) {
   auto it = nodes.find(n.getName());
   
   if(it == nodes.end()) {
-	return 0;
+	return NULL;
   } else {
 	vector<Node*>* children = it->second;
 	for(auto i = children->begin(); i != children->end(); ++i) {

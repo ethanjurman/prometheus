@@ -12,11 +12,10 @@ public:
 	NodeDatabase db;
 	db.insertNode(n);
 	
-	TestRunner::assertEquals<int>(1, db.parentQuery(n.getName())->size());
+	TestRunner::assertEquals<int>("Verify there's only 1 child", 1, db.parentQuery(n.getName())->size());
 	
 	db.removeNode(n);
-	vector<Node*>* v = db.parentQuery(n.getName());
-	TestRunner::assertTrue("Verify the node was deleted.", v == NULL);
+	TestRunner::assertEquals<int>("Verify the node was deleted.", 0, db.parentQuery(n.getName())->size());
   }
 };
 
