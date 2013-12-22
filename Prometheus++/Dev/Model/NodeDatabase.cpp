@@ -4,7 +4,11 @@ using namespace Model;
 
 NodeDatabase::NodeDatabase() {}
 
-NodeDatabase::~NodeDatabase() {}
+NodeDatabase::~NodeDatabase() {
+  for(auto it = nodes.begin(); it != nodes.end(); ++it) {
+	delete it->second;
+  }
+}
 
 void NodeDatabase::insertNode(Node& n) {
   auto it = nodes.find(n.getName());
