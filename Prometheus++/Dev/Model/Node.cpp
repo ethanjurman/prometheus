@@ -3,7 +3,7 @@ using namespace std;
 using namespace Model;
 
 Node::~Node() {
-  if(parent != 0)
+  if(parent != NULL)
 	delete parent;
 }
 
