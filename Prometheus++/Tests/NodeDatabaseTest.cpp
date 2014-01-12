@@ -38,7 +38,7 @@ public:
 int main() {
   TestRunner run;
   run.addTest(NodeDatabaseTest::basicDatabaseTest, "basicDatabaseTest");
-  run.addTest(NodeDatabaseTest::multipleInsertionTest, "multipleInsertionTest");
+  //run.addTest(NodeDatabaseTest::multipleInsertionTest, "multipleInsertionTest");
   run.runTests();
   
   return 0;
