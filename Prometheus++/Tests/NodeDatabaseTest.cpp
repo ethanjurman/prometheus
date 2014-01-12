@@ -17,11 +17,26 @@ public:
 	db.removeNode(n);
 	TestRunner::assertEquals<int>("Verify the node was deleted.", 0, db.parentQuery(n.getName())->size());
   }
+  
+  // THIS TEST HAS A SEG FAULT
+  static void multipleInsertionTest() {
+	Node n("Parent Node");
+	Node c1("Child 1", &n);
+	Node c2("Child 2", &n);
+	NodeDatabase db;
+	
+	db.insertNode(n);
+	db.insertNode(c1);
+	db.insertNode(c2);
+	
+	TestRunner::assertEquals<int>("Verify 2 children nodes.", 2, db.parentQuery(n.getName())->size());
+  }
 };
 
 int main() {
   TestRunner run;
   run.addTest(NodeDatabaseTest::basicDatabaseTest, "basicDatabaseTest");
+  run.addTest(NodeDatabaseTest::multipleInsertionTest, "multipleInsertionTest");
   run.runTests();
   
   return 0;
