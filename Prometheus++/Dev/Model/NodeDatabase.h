@@ -3,6 +3,8 @@
 #include <vector>
 #include <string>
 
+//#define DEBUG
+
 namespace Model {
   class NodeDatabase {
 	std::map< std::string, std::vector<Node*>* > nodes;
@@ -14,5 +16,8 @@ namespace Model {
 	void insertNode(Node&);
 	bool removeNode(Node&);
 	std::vector<Node*>* parentQuery(std::string) const;
+	
+  private:
+	std::vector<Node*>* findParentVector(Node&) const;
   };
 }

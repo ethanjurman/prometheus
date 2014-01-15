@@ -11,14 +11,14 @@ NodeDatabase::~NodeDatabase() {
 }
 
 void NodeDatabase::insertNode(Node& n) {
-  auto it = nodes.find(n.getName());
+  vector<Node*>* v = findParentVector(n);
   
-  if(it == nodes.end()) {
+  if(v == NULL) {
 	vector<Node*>* children = new vector<Node*>;
 	children->push_back(&n);
 	nodes[n.getName()] = children; // creates the key-value pair
   } else {
-	it->second->push_back(&n);
+	v->push_back(&n);
   }
 }
 
@@ -46,4 +46,14 @@ vector<Node*>* NodeDatabase::parentQuery(string parent) const {
   } else {
 	return it->second;
   }
+}
+
+// NOTE: This is linear time wheras map::find is logarithmic
+vector<Node*>* NodeDatabase::findParentVector(Node& n) const {
+  for(auto it = nodes.begin(); it != nodes.end(); ++it) {
+	if(it->first == n.getParent().getName())
+	  return it->second;
+  }
+  
+  return NULL;
 }

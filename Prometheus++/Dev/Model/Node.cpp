@@ -3,8 +3,8 @@ using namespace std;
 using namespace Model;
 
 Node::~Node() {
-  if(parent != NULL)
-	delete parent;
+  /*if(parent != NULL)
+	delete parent;*/
 }
 
 Node& Node::getParent() const {
