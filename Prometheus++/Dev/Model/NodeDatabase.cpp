@@ -14,9 +14,7 @@ void NodeDatabase::insertNode(Node& n) {
   vector<Node*>* v = findParentVector(n);
   
   if(v == NULL) {
-	vector<Node*>* children = new vector<Node*>;
-	children->push_back(&n);
-	nodes[n.getName()] = children; // creates the key-value pair
+	insertParentNode(n);
   } else {
 	v->push_back(&n);
   }
@@ -63,3 +61,9 @@ void NodeDatabase::insertParentNode(Node& n) {
   children->push_back(&n);
   nodes[n.getName()] = children;
 }
+
+#ifdef DEBUG
+std::map< std::string, std::vector<Node*>* > NodeDatabase::getMap() const {
+  return nodes;
+}
+#endif

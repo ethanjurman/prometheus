@@ -14,7 +14,9 @@ namespace Model {
 	}
 	
 	Node(std::string name, bool selected = false) {
-	  Node(name, NULL, selected);
+	  this->name = name;
+	  this->parent = NULL;
+	  this->selected = selected;
 	}
 	
 	~Node();
