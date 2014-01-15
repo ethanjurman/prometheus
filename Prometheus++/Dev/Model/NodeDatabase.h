@@ -3,8 +3,6 @@
 #include <vector>
 #include <string>
 
-//#define DEBUG
-
 namespace Model {
   class NodeDatabase {
 	std::map< std::string, std::vector<Node*>* > nodes;

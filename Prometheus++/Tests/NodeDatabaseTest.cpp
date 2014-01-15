@@ -29,9 +29,7 @@ public:
 	db.insertNode(c1);
 	db.insertNode(c2);
 	
-	int val = db.parentQuery(n.getName())->size();
-	
-	TestRunner::assertEquals<int>("Verify 2 children nodes and reference to self.", 3, val);
+	TestRunner::assertEquals<int>("Verify 2 children nodes and reference to self.", 3, db.parentQuery(n.getName())->size());
   }
 };
 
