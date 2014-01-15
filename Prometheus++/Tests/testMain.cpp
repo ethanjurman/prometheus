@@ -14,11 +14,18 @@ void test2() {
 	cout << i << endl;
 }
 
+void test3() {
+  TestRunner::assertFalse(NULL);
+  TestRunner::assertFalse(0);
+  TestRunner::assertTrue(1+0);
+}
+
 int main() {
   TestRunner test;
   
   test.addTest(test1);
   test.addTest(test2);
+  test.addTest(test3);
   
   test.runTests();
   return 0;

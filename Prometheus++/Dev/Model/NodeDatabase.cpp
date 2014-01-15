@@ -57,3 +57,9 @@ vector<Node*>* NodeDatabase::findParentVector(Node& n) const {
   
   return NULL;
 }
+
+void NodeDatabase::insertParentNode(Node& n) {
+  vector<Node*>* children = new vector<Node*>;
+  children->push_back(&n);
+  nodes[n.getName()] = children;
+}

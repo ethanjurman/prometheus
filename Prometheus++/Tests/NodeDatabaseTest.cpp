@@ -25,7 +25,7 @@ public:
 	Node c2("Child 2", &n);
 	NodeDatabase db;
 	
-	db.insertNode(n);
+	db.insertParentNode(n);
 	db.insertNode(c1);
 	db.insertNode(c2);
 	

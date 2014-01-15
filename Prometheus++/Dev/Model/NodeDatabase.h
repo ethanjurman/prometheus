@@ -12,6 +12,7 @@ namespace Model {
 	~NodeDatabase();
 	
 	void insertNode(Node&);
+	void insertParentNode(Node&);
 	bool removeNode(Node&);
 	std::vector<Node*>* parentQuery(std::string) const;
 	
