@@ -15,6 +15,7 @@ void TestRunner::addTest(void (*func)(), string name) {
 void TestRunner::runTests() {
   for(unsigned int i = 0; i < tests.size(); ++i) {
 	try {
+	  cout << "Running test: " << tests[i]->getTestName() << endl;
 	  tests[i]->runFunction();
 	} catch(AssertException& e) {
 	  cerr << "Error in " << tests[i]->getTestName() << ": " << e.getMessage() << endl;
