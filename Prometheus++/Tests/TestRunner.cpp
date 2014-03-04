@@ -17,6 +17,7 @@ void TestRunner::runTests() {
 	try {
 	  cout << "Running test: " << tests[i]->getTestName() << endl;
 	  tests[i]->runFunction();
+	  cout << endl;
 	} catch(AssertException& e) {
 	  cerr << "Error in " << tests[i]->getTestName() << ": " << e.getMessage() << endl;
 	}

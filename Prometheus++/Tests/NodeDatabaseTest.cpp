@@ -31,12 +31,29 @@ public:
 	
 	TestRunner::assertEquals<int>("Verify 2 children nodes and reference to self.", 3, db.parentQuery(n.getName())->size());
   }
+
+  static void multipleInsertDeleteTest() {
+	  	Node* p = new Node("Node");
+		Node* c1 = new Node("Child 1", p);
+		Node* c2 = new Node("Child 2", p);
+		NodeDatabase db;
+
+		db.insertParentNode(*p);
+		db.insertNode(*c1);
+		db.insertNode(*c2);
+
+		TestRunner::assertEquals<int>("Verify 2 children nodes and reference to self.", 3, db.parentQuery(p->getName())->size());
+		TestRunner::assertTrue("Verify removal of Child 1", db.removeNode(*c1));
+		TestRunner::assertTrue("Verify removal of Child 2", db.removeNode(*c2));
+		TestRunner::assertTrue("Verify removal of Node", db.removeNode(*p));
+	}
 };
 
 int main() {
   TestRunner run;
   run.addTest(NodeDatabaseTest::basicDatabaseTest, "basicDatabaseTest");
   run.addTest(NodeDatabaseTest::multipleInsertionTest, "multipleInsertionTest");
+  run.addTest(NodeDatabaseTest::multipleInsertDeleteTest, "multipleInsertDeleteTest");
   run.runTests();
   
   return 0;
